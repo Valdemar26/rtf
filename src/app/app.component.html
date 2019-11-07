@@ -1,4 +1,12 @@
 <div class="wrapper">
-  <div>{{ rtfText | rtfToHtml }}</div>
-  <div></div>
+<!--  <div>-->
+<!--    {{ rtfText | rtfToHtml }}-->
+<!--  </div>-->
+
+  <div>
+    <p [innerHTML]="comment">{{ comment }}</p>
+    <p [innerHTML]="comment2">{{ comment2 }}</p>
+
+    <p class="rtf" [innerHTML]="rtfText | rtfToHtml">{{ rtfText }}</p>
+  </div>
 </div>

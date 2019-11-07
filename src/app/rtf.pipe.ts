@@ -6,13 +6,16 @@ import { Pipe, PipeTransform } from '@angular/core';
 export class RtfToHtmlPipe implements PipeTransform {
 
   transform(value: any, ...args: any[]): any {
-    console.log('RTF: ', value);
 
     // value.replace(/ansi/, /'TEST'/);  //  \
-    console.log('SPLIT: ', value.split('/\'#\\$D#\\$A\'/'));
-    console.log(value.match(/'#\$D#\$A'/g || []).length);
+    console.log('SPLIT: ', value.split(/'#\$D#\$A'/));
 
-    console.log('NEW RTF: ', value, typeof value, value.length);
+    // console.log('NEW RTF: ', value, typeof value, value.length);
+    // value = value.split(/'#\$D#\$A'/);
+    value = value
+      .replace(/'#\$D#\$A'/g, '<br/> <br/>')
+      // .replace(/'\\n'/g, '<br/>')
+      .replace(/fs/g, 'font-size: ');
     return value;
   }
 
