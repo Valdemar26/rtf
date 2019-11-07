@@ -16,6 +16,7 @@ export class RtfToHtmlPipe implements PipeTransform {
       .replace(/'#\$D#\$A'/g, '<br/> <br/>')
       // .replace(/'\\n'/g, '<br/>')
       .replace(/fs/g, 'font-size: ');
+      // .replace(/font-size: /g, 'FONT SIZE:');
     return value;
   }
 
